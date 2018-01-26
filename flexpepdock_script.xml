@@ -1,0 +1,23 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+      <ScoreFunction name="default" weights="talaris2014" />
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+      <FlexPepDock name="fpdock" pep_refine="true" extra_scoring="false"/>
+      <MinMover name="min_mover" scorefxn="default" chi="true" bb="1" cartesian="F" >
+        </MinMover>
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+      <Add mover="min_mover" />
+      <Add mover="fpdock" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="default" />
+</ROSETTASCRIPTS>

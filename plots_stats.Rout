@@ -1,0 +1,201 @@
+WARNING: unknown option '-test18_control'
+
+
+R version 3.4.2 (2017-09-28) -- "Short Summer"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> #!/usr/bin/env RScript
+> 
+> args <- commandArgs(trailingOnly = FALSE)
+> myargument <- args[length(args)]
+> myargument <- sub("-","", myargument)
+> print(myargument)
+[1] "test18_control"
+> 
+> #Install, load all libraries
+> install.packages("RcppCNPy", repos = "http://cloud.r-project.org/")
+Installing package into ‘/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4’
+(as ‘lib’ is unspecified)
+trying URL 'http://cloud.r-project.org/src/contrib/RcppCNPy_0.2.8.tar.gz'
+Content type 'application/x-gzip' length 203794 bytes (199 KB)
+==================================================
+downloaded 199 KB
+
+* installing *source* package ‘RcppCNPy’ ...
+** package ‘RcppCNPy’ successfully unpacked and MD5 sums checked
+** libs
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c cnpy.cpp -o cnpy.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c cnpyMod.cpp -o cnpyMod.o
+gcc -std=gnu99 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o RcppCNPy.so cnpy.o cnpyMod.o init.o -lz -L/usr/lib/R/lib -lR
+installing to /home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/RcppCNPy/libs
+** R
+** demo
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (RcppCNPy)
+
+The downloaded source packages are in
+	‘/tmp/Rtmpb9nx7o/downloaded_packages’
+> install.packages("dbscan", repos = "http://cloud.r-project.org/")
+Installing package into ‘/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4’
+(as ‘lib’ is unspecified)
+trying URL 'http://cloud.r-project.org/src/contrib/dbscan_1.1-1.tar.gz'
+Content type 'application/x-gzip' length 2079772 bytes (2.0 MB)
+==================================================
+downloaded 2.0 MB
+
+* installing *source* package ‘dbscan’ ...
+** package ‘dbscan’ successfully unpacked and MD5 sums checked
+** libs
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c ANN.cpp -o ANN.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_JP.cpp -o R_JP.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_dbscan.cpp -o R_dbscan.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_density.cpp -o R_density.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_frNN.cpp -o R_frNN.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_kNN.cpp -o R_kNN.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_optics.cpp -o R_optics.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c R_regionQuery.cpp -o R_regionQuery.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c bd_fix_rad_search.cpp -o bd_fix_rad_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c bd_pr_search.cpp -o bd_pr_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c bd_search.cpp -o bd_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c bd_tree.cpp -o bd_tree.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c brute.cpp -o brute.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c buildHDBSCAN.cpp -o buildHDBSCAN.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c dendrogram.cpp -o dendrogram.o
+gcc -std=gnu99 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_dump.cpp -o kd_dump.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_fix_rad_search.cpp -o kd_fix_rad_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_pr_search.cpp -o kd_pr_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_search.cpp -o kd_search.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_split.cpp -o kd_split.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_tree.cpp -o kd_tree.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c kd_util.cpp -o kd_util.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c mrd.cpp -o mrd.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c perf.cpp -o perf.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c prims_mst.cpp -o prims_mst.o
+g++ -std=gnu++11 -I/usr/share/R/include -DNDEBUG  -I"/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/Rcpp/include"    -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g -c union_find.cpp -o union_find.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o dbscan.so ANN.o R_JP.o R_dbscan.o R_density.o R_frNN.o R_kNN.o R_optics.o R_regionQuery.o RcppExports.o bd_fix_rad_search.o bd_pr_search.o bd_search.o bd_tree.o brute.o buildHDBSCAN.o dendrogram.o init.o kd_dump.o kd_fix_rad_search.o kd_pr_search.o kd_search.o kd_split.o kd_tree.o kd_util.o mrd.o perf.o prims_mst.o union_find.o -L/usr/lib/R/lib -lR
+installing to /home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/dbscan/libs
+** R
+** data
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (dbscan)
+
+The downloaded source packages are in
+	‘/tmp/Rtmpb9nx7o/downloaded_packages’
+> install.packages("lattice", repos = "http://cloud.r-project.org/")
+Installing package into ‘/home/achitturi/R/x86_64-pc-linux-gnu-library/3.4’
+(as ‘lib’ is unspecified)
+trying URL 'http://cloud.r-project.org/src/contrib/lattice_0.20-35.tar.gz'
+Content type 'application/x-gzip' length 359813 bytes (351 KB)
+==================================================
+downloaded 351 KB
+
+* installing *source* package ‘lattice’ ...
+** package ‘lattice’ successfully unpacked and MD5 sums checked
+** libs
+gcc -std=gnu99 -I/usr/share/R/include -DNDEBUG      -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -I/usr/share/R/include -DNDEBUG      -fpic  -g -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -D_FORTIFY_SOURCE=2 -g  -c threeDplot.c -o threeDplot.o
+gcc -std=gnu99 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lattice.so init.o threeDplot.o -L/usr/lib/R/lib -lR
+installing to /home/achitturi/R/x86_64-pc-linux-gnu-library/3.4/lattice/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** demo
+** inst
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (lattice)
+
+The downloaded source packages are in
+	‘/tmp/Rtmpb9nx7o/downloaded_packages’
+> library(RcppCNPy)
+> library(dbscan)
+> library(lattice)
+> 
+> #Load distance matrix, cluster
+> filepath <- paste('/home/achitturi/Desktop/', myargument, "-structures/", sep="")
+> string1 <- paste(filepath, "dist_mat_.npy", sep="")
+> dist_mat <- npyLoad(string1)
+> res <- dbscan(dist_mat, eps = .7, minPts = 5)
+> 
+> #Load scores and RMSD values
+> string2 <- paste(filepath, "revised_scores.txt", sep="")
+> revised_scores <- read.table(string2)
+> string3 <- paste(filepath, myargument, ".native.sc", sep="")
+> test_native <- read.csv(string3, sep="")
+> 
+> #Score vs. RMSD
+> test_data <- cbind.data.frame(test_native$rms, revised_scores$V2)
+> colnames(test_data) <- cbind("RMS", "score")
+> string4 <- paste(filepath, "score_vs_RMSD.jpg", sep="")
+> jpeg(string4, width = 640, height = 480, units = "px", pointsize = 15)
+> plot(test_data, col=res$cluster, main="RMSD vs. score", xlim=c(.1, 1), ylim=c(-98, -40))
+> points(test_data[res$cluster==0,], pch=3, col="grey")
+> dev.off()
+null device 
+          1 
+> 
+> #MDS
+> string5 <- paste(filepath, "MDSclustering.jpg", sep="")
+> jpeg(string5, width = 640, height = 640, units = "px", pointsize = 15)
+> mds <- cmdscale(dist_mat, k=2, eig=FALSE)
+> plot(mds[,1], mds[,2], col=res$cluster, main="MDS clustering", xlim=c(-.6, .6), ylim=c(-.6, .6))
+> dev.off()
+null device 
+          1 
+> 
+> #Hullplot
+> string6 <- paste(filepath, "Hullplot.jpg", sep="")
+> jpeg(string6, width = 640, height = 480, units = "px", pointsize = 15)
+> hullplot(test_data, res, xlim=c(.1, 1), ylim=c(-98, -40))
+> dev.off()
+null device 
+          1 
+> 
+> #Separate cluster plots (noise = 0)
+> test_cl <- cbind.data.frame(test_data, res$cluster)
+> colnames(test_cl) <- cbind("RMS", "score", "cluster")
+> string7 <- paste(filepath, "Clusterplot.jpg", sep="")
+> jpeg(string7, width = 640, height = 480, units = "px", pointsize = 15)
+> xyplot(score ~ RMS | cluster, test_cl, group=cluster, grid=TRUE, main = "Cluster plot", ylim=c(-98, -40), xlim=c(.1, 1))
+> dev.off()
+null device 
+          1 
+> 
+> proc.time()
+   user  system elapsed 
+ 65.962   4.542  71.841 
